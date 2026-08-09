@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard · Bridgepoint Relief</title>
+<meta name="robots" content="noindex, nofollow">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            'navy-2': '#16213A',
+            off: '#F8FAFC',
+            terracotta: { DEFAULT:'#EA580C', dark:'#C2410C' },
+            emerald: '#059669'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            mono: ['IBM Plex Mono','ui-monospace','monospace']
+          }
+        }
+      }
+    }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  #admin-sidebar.open{display:flex !important;position:fixed;inset:0 auto 0 0;}
+</style>
+</head>
+<body class="bg-off text-navy antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+<div id="main">
+
+<div class="min-h-screen flex">
+  <aside id="admin-sidebar" class="w-64 bg-navy shrink-0 hidden md:flex flex-col fixed md:sticky top-0 h-screen z-40">
+    <div class="px-5 h-16 flex items-center gap-2 text-white font-extrabold border-b border-white/10">
+      <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+      Admin
+    </div>
+    <nav class="flex-1 px-3 py-5 space-y-1" aria-label="Admin">
+      <a href="#" class="sidebar-link active flex items-center gap-3 px-4 py-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9M5 10v10h14V10"/></svg><span>Overview</span></a>
+      <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg><span>Donations Ledger</span></a>
+      <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg><span>Volunteer Applications</span></a>
+      <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg><span>Content Manager</span></a>
+      <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-2.5"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg><span>Audit Logs</span></a>
+    </nav>
+    <div class="px-4 py-4 border-t border-white/10">
+      <a href="../index.html" class="sidebar-link flex items-center gap-3 px-4 py-2.5">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+        Back to site
+      </a>
+    </div>
+  </aside>
+
+  <div class="flex-1 min-w-0">
+    <header class="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-4 sm:px-8 sticky top-0 z-30">
+      <div class="flex items-center gap-3">
+        <button id="sidebar-toggle" class="md:hidden p-2 rounded-lg hover:bg-slate-100" aria-label="Toggle admin sidebar">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <h1 class="font-bold text-lg">Overview</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="status-pill status-success">Session secure</span>
+        <div class="w-9 h-9 rounded-full bg-navy text-white flex items-center justify-center text-xs font-bold">DW</div>
+      </div>
+    </header>
+
+    <main class="px-4 sm:px-8 py-8 space-y-10">
+      <section class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="card p-6"><p class="text-xs text-ink-soft eyebrow mb-2">Total Donations (YTD)</p><p class="text-3xl font-extrabold mono">$412,880</p><p class="text-xs text-emerald font-semibold mt-1">↑ 12% vs last year</p></div>
+        <div class="card p-6"><p class="text-xs text-ink-soft eyebrow mb-2">Active Recurring Donors</p><p class="text-3xl font-extrabold mono">1,204</p><p class="text-xs text-emerald font-semibold mt-1">↑ 34 this month</p></div>
+        <div class="card p-6"><p class="text-xs text-ink-soft eyebrow mb-2">Pending Volunteer Apps</p><p class="text-3xl font-extrabold mono">18</p><p class="text-xs text-terracotta-dark font-semibold mt-1">5 awaiting review</p></div>
+        <div class="card p-6"><p class="text-xs text-ink-soft eyebrow mb-2">Failed Webhooks (24h)</p><p class="text-3xl font-extrabold mono">0</p><p class="text-xs text-ink-soft font-semibold mt-1">All systems normal</p></div>
+      </section>
+
+      <section class="card overflow-x-auto">
+        <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+          <h2 class="font-bold">Recent Donations Ledger</h2>
+          <a href="#" class="text-terracotta text-sm font-semibold hover:underline">Export CSV</a>
+        </div>
+        <table class="ledger">
+          <thead><tr><th>Date</th><th>Donor</th><th>Amount</th><th>Gateway Ref</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody><tr>
+      <td class="mono">Aug 08, 2026</td>
+      <td class="font-medium">M. Alvarez</td>
+      <td class="mono font-semibold">$250.00</td>
+      <td class="mono text-slate-500">TXN-88213</td>
+      <td><span class="status-pill status-success">Cleared</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr><tr>
+      <td class="mono">Aug 08, 2026</td>
+      <td class="font-medium">S. Okafor</td>
+      <td class="mono font-semibold">$50.00</td>
+      <td class="mono text-slate-500">TXN-88212</td>
+      <td><span class="status-pill status-success">Cleared</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr><tr>
+      <td class="mono">Aug 07, 2026</td>
+      <td class="font-medium">J. Lindqvist</td>
+      <td class="mono font-semibold">$1,000.00</td>
+      <td class="mono text-slate-500">TXN-88190</td>
+      <td><span class="status-pill status-pending">Pending</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr><tr>
+      <td class="mono">Aug 07, 2026</td>
+      <td class="font-medium">R. Chen</td>
+      <td class="mono font-semibold">$25.00</td>
+      <td class="mono text-slate-500">TXN-88184</td>
+      <td><span class="status-pill status-success">Cleared</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr><tr>
+      <td class="mono">Aug 06, 2026</td>
+      <td class="font-medium">A. Kimathi</td>
+      <td class="mono font-semibold">$100.00</td>
+      <td class="mono text-slate-500">TXN-88151</td>
+      <td><span class="status-pill status-failed">Refunded</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr><tr>
+      <td class="mono">Aug 06, 2026</td>
+      <td class="font-medium">Anonymous</td>
+      <td class="mono font-semibold">$500.00</td>
+      <td class="mono text-slate-500">TXN-88147</td>
+      <td><span class="status-pill status-success">Cleared</span></td>
+      <td><button data-modal-open="refund-modal" class="text-terracotta text-xs font-semibold hover:underline">Issue Refund</button></td>
+    </tr></tbody>
+        </table>
+      </section>
+
+      <section class="grid lg:grid-cols-2 gap-8">
+        <div class="card p-6">
+          <h2 class="font-bold mb-4">Publish a field update</h2>
+          <form id="cms-form" class="space-y-4">
+            <div>
+              <label for="cms-title" class="block text-sm font-medium mb-1.5">Title</label>
+              <input id="cms-title" required type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="cms-type" class="block text-sm font-medium mb-1.5">Type</label>
+                <select id="cms-type" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+                  <option>Field Update</option>
+                  <option>Press Release</option>
+                </select>
+              </div>
+              <div>
+                <label for="cms-loc" class="block text-sm font-medium mb-1.5">Location</label>
+                <input id="cms-loc" type="text" placeholder="City, Country" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+              </div>
+            </div>
+            <div>
+              <label for="cms-body" class="block text-sm font-medium mb-1.5">Body</label>
+              <textarea id="cms-body" rows="4" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta"></textarea>
+            </div>
+            <button type="submit" class="btn-primary px-6 py-2.5 rounded-lg">Publish Post</button>
+            <p id="cms-toast" class="hidden text-sm text-emerald font-semibold" role="status">Post published to the field blog.</p>
+          </form>
+        </div>
+
+        <div class="card p-6">
+          <h2 class="font-bold mb-4">Audit Log &amp; Webhook Monitor</h2>
+          <table class="ledger">
+            <thead><tr><th>Time</th><th>Event</th><th>Actor</th></tr></thead>
+            <tbody><tr>
+      <td class="mono text-slate-500">14:22:09</td>
+      <td>Webhook received — payment_intent.succeeded</td>
+      <td class="mono">stripe-webhook</td>
+    </tr><tr>
+      <td class="mono text-slate-500">13:58:41</td>
+      <td>Admin login</td>
+      <td class="mono">d.whitfield@bridgepointrelief.org</td>
+    </tr><tr>
+      <td class="mono text-slate-500">12:03:15</td>
+      <td>Blog post published</td>
+      <td class="mono">cms</td>
+    </tr><tr>
+      <td class="mono text-slate-500">09:40:02</td>
+      <td>Refund issued — TXN-88151</td>
+      <td class="mono">a.okonkwo@bridgepointrelief.org</td>
+    </tr><tr>
+      <td class="mono text-slate-500">08:12:55</td>
+      <td>Webhook received — customer.subscription.created</td>
+      <td class="mono">stripe-webhook</td>
+    </tr></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+<div id="refund-modal" class="modal-backdrop hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="refund-modal-title">
+  <div class="card p-7 max-w-sm w-full">
+    <h2 id="refund-modal-title" class="font-bold text-lg mb-2">Issue refund?</h2>
+    <p class="text-sm text-ink-soft mb-6">This reverses the charge to the donor's original payment method and updates the public ledger.</p>
+    <div class="flex gap-3 justify-end">
+      <button data-modal-close class="btn-outline-navy px-5 py-2.5 rounded-lg text-sm">Cancel</button>
+      <button class="btn-primary px-5 py-2.5 rounded-lg text-sm">Confirm Refund</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<script src="../assets/main.js"></script>
+</body>
+</html>

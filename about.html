@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About & Leadership · Bridgepoint Relief</title>
+<meta name="description" content="Bridgepoint Relief's mission, values, and the leadership and board guiding our global work.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            'navy-2': '#16213A',
+            off: '#F8FAFC',
+            terracotta: { DEFAULT:'#EA580C', dark:'#C2410C' },
+            emerald: '#059669'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            mono: ['IBM Plex Mono','ui-monospace','monospace']
+          }
+        }
+      }
+    }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-off text-navy antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="bg-navy sticky top-0 z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-lg tracking-tight">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link active">About</a>
+<a href="programs.html" class="nav-link">Programs</a>
+<a href="transparency.html" class="nav-link">Transparency</a>
+<a href="blog.html" class="nav-link">Field Blog</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="text-slate-200 text-sm font-medium hover:text-white">Volunteer</a>
+        <a href="donate.html" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Donate Now</a>
+      </div>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+      <nav class="pb-4 space-y-1" aria-label="Mobile">
+        <a href="index.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Home</a>
+<a href="about.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">About</a>
+<a href="programs.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Programs</a>
+<a href="transparency.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Transparency</a>
+<a href="blog.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Field Blog</a>
+<a href="contact.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Contact</a>
+
+        <a href="donate.html" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg text-sm">Donate Now</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="dispatch" role="region" aria-label="Live field dispatch feed">
+  <div class="dispatch-track" id="dispatch-track" role="list"></div>
+</div>
+
+<main id="main">
+
+<section class="bg-navy">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <p class="eyebrow mb-3">About Bridgepoint</p>
+    <h1 class="text-4xl font-extrabold text-white">Twenty-two years of showing up before the cameras do.</h1>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 grid md:grid-cols-3 gap-10">
+  <div class="card p-8">
+    <h2 class="font-bold text-lg mb-3">Mission</h2>
+    <p class="text-sm text-ink-soft leading-relaxed">Deliver health, education and emergency relief to communities facing crisis, and account for every dollar in the open.</p>
+  </div>
+  <div class="card p-8">
+    <h2 class="font-bold text-lg mb-3">Vision</h2>
+    <p class="text-sm text-ink-soft leading-relaxed">A world where a community's recovery is never slowed by a funder's uncertainty about where the money goes.</p>
+  </div>
+  <div class="card p-8">
+    <h2 class="font-bold text-lg mb-3">Core Values</h2>
+    <p class="text-sm text-ink-soft leading-relaxed">Local leadership, radical transparency, dignity in delivery, and evidence over anecdote.</p>
+  </div>
+</section>
+
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <p class="eyebrow mb-2">Governance</p>
+    <h2 class="text-3xl font-extrabold text-navy mb-10">Leadership &amp; Board</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+    <div class="card p-6 text-center">
+      <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=300&auto=format&fit=crop" alt="Portrait of Amara Okonkwo" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-off">
+      <h3 class="font-bold mt-4">Amara Okonkwo</h3>
+      <p class="text-terracotta text-sm font-semibold">Chief Executive Officer</p>
+      <p class="text-sm text-ink-soft mt-3 leading-relaxed">Twenty years in humanitarian logistics across East and West Africa before founding Bridgepoint's field-operations model.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-xs font-semibold text-navy mt-4 hover:underline">LinkedIn Profile →</a>
+    </div>
+      
+    <div class="card p-6 text-center">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Portrait of Daniel Whitfield" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-off">
+      <h3 class="font-bold mt-4">Daniel Whitfield</h3>
+      <p class="text-terracotta text-sm font-semibold">Chief Financial Officer</p>
+      <p class="text-sm text-ink-soft mt-3 leading-relaxed">Former audit partner focused on nonprofit reporting standards; built Bridgepoint's public ledger system.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-xs font-semibold text-navy mt-4 hover:underline">LinkedIn Profile →</a>
+    </div>
+      
+    <div class="card p-6 text-center">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop" alt="Portrait of Priya Raman" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-off">
+      <h3 class="font-bold mt-4">Priya Raman</h3>
+      <p class="text-terracotta text-sm font-semibold">Chief Program Officer</p>
+      <p class="text-sm text-ink-soft mt-3 leading-relaxed">Oversees program design and field-office coordination across all 15 country offices.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-xs font-semibold text-navy mt-4 hover:underline">LinkedIn Profile →</a>
+    </div>
+      
+    <div class="card p-6 text-center">
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=300&auto=format&fit=crop" alt="Portrait of Board Chair — Miguel Santos" class="w-24 h-24 rounded-full object-cover mx-auto border-4 border-off">
+      <h3 class="font-bold mt-4">Board Chair — Miguel Santos</h3>
+      <p class="text-terracotta text-sm font-semibold">Board of Directors</p>
+      <p class="text-sm text-ink-soft mt-3 leading-relaxed">Independent director; chairs the audit and risk committee.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-xs font-semibold text-navy mt-4 hover:underline">LinkedIn Profile →</a>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <p class="eyebrow mb-2">Where we work</p>
+  <h2 class="text-3xl font-extrabold text-navy mb-8">15 country offices, one reporting standard</h2>
+  <div class="flex flex-wrap gap-3">
+    <span class="coord-tag text-sm">Malawi</span><span class="coord-tag text-sm">Uganda</span><span class="coord-tag text-sm">Kenya</span><span class="coord-tag text-sm">Zimbabwe</span><span class="coord-tag text-sm">Bangladesh</span><span class="coord-tag text-sm">Afghanistan</span><span class="coord-tag text-sm">Türkiye</span><span class="coord-tag text-sm">Jordan</span><span class="coord-tag text-sm">Guatemala</span><span class="coord-tag text-sm">Peru</span><span class="coord-tag text-sm">Philippines</span><span class="coord-tag text-sm">Nepal</span><span class="coord-tag text-sm">South Sudan</span><span class="coord-tag text-sm">Haiti</span><span class="coord-tag text-sm">Moldova</span>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy text-slate-300 mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2 text-white font-extrabold text-lg mb-3">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </div>
+      <p class="text-sm text-slate-400 leading-relaxed">An international NGO delivering health, education and emergency relief programs across 15 countries, audited and reported in the open.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-white">About &amp; Leadership</a></li>
+        <li><a href="programs.html" class="hover:text-white">Programs &amp; Field Impact</a></li>
+        <li><a href="transparency.html" class="hover:text-white">Financial Transparency</a></li>
+        <li><a href="blog.html" class="hover:text-white">News &amp; Field Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Involved</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="donate.html" class="hover:text-white">Donate</a></li>
+        <li><a href="contact.html" class="hover:text-white">Volunteer</a></li>
+        <li><a href="contact.html" class="hover:text-white">Institutional Partnerships</a></li>
+        <li><a href="contact.html" class="hover:text-white">Press Inquiries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+        <li><a href="refund-policy.html" class="hover:text-white">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+      <p>© <span data-year></span> Bridgepoint Relief International. Registered 501(c)(3) nonprofit.</p>
+      <p class="mono">EIN 00-0000000 · Audited annually by an independent firm</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

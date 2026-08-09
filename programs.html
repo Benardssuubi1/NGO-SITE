@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs & Field Impact · Bridgepoint Relief</title>
+<meta name="description" content="Explore Bridgepoint Relief's education, healthcare, relief and sustainability programs with real field case studies.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            'navy-2': '#16213A',
+            off: '#F8FAFC',
+            terracotta: { DEFAULT:'#EA580C', dark:'#C2410C' },
+            emerald: '#059669'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            mono: ['IBM Plex Mono','ui-monospace','monospace']
+          }
+        }
+      }
+    }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-off text-navy antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="bg-navy sticky top-0 z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-lg tracking-tight">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a href="index.html" class="nav-link">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="programs.html" class="nav-link active">Programs</a>
+<a href="transparency.html" class="nav-link">Transparency</a>
+<a href="blog.html" class="nav-link">Field Blog</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="text-slate-200 text-sm font-medium hover:text-white">Volunteer</a>
+        <a href="donate.html" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Donate Now</a>
+      </div>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+      <nav class="pb-4 space-y-1" aria-label="Mobile">
+        <a href="index.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Home</a>
+<a href="about.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">About</a>
+<a href="programs.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Programs</a>
+<a href="transparency.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Transparency</a>
+<a href="blog.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Field Blog</a>
+<a href="contact.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Contact</a>
+
+        <a href="donate.html" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg text-sm">Donate Now</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="dispatch" role="region" aria-label="Live field dispatch feed">
+  <div class="dispatch-track" id="dispatch-track" role="list"></div>
+</div>
+
+<main id="main">
+
+<section class="bg-navy">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <p class="eyebrow mb-3">Programs &amp; Field Impact</p>
+    <h1 class="text-4xl font-extrabold text-white">Four program areas, one delivery standard.</h1>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+  <div class="flex flex-wrap gap-3 mb-10" role="group" aria-label="Filter programs by category">
+    <button data-filter="all" aria-pressed="true" class="amount-btn px-4 py-2 rounded-full text-sm">All Programs</button><button data-filter="education" aria-pressed="false" class="amount-btn px-4 py-2 rounded-full text-sm">Education</button><button data-filter="healthcare" aria-pressed="false" class="amount-btn px-4 py-2 rounded-full text-sm">Healthcare</button><button data-filter="relief" aria-pressed="false" class="amount-btn px-4 py-2 rounded-full text-sm">Relief</button><button data-filter="sustainability" aria-pressed="false" class="amount-btn px-4 py-2 rounded-full text-sm">Sustainability</button>
+  </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <div class="card overflow-hidden" data-category="education">
+      <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=800&auto=format&fit=crop" alt="Emergency School Kits field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Cox's Bazar, Bangladesh</span>
+        <h3 class="font-bold text-lg mt-3">Emergency School Kits</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Temporary classrooms and learning kits for displaced children, reaching 4,200 students this term.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="education">
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop" alt="Teacher Training Corps field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Herat, Afghanistan</span>
+        <h3 class="font-bold text-lg mt-3">Teacher Training Corps</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Certifying local teachers to sustain classrooms after international staff rotate out.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="healthcare">
+      <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop" alt="Mobile Health Clinics field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Bidibidi, Uganda</span>
+        <h3 class="font-bold text-lg mt-3">Mobile Health Clinics</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Rotating clinics delivering checkups and vaccinations to remote settlements.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="healthcare">
+      <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?q=80&w=800&auto=format&fit=crop" alt="Maternal Nutrition Program field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Turkana, Kenya</span>
+        <h3 class="font-bold text-lg mt-3">Maternal Nutrition Program</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Prenatal nutrition support cutting low-birth-weight rates by a third in enrolled clinics.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="relief">
+      <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?q=80&w=800&auto=format&fit=crop" alt="Flood Shelter Reinforcement field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Sylhet, Bangladesh</span>
+        <h3 class="font-bold text-lg mt-3">Flood Shelter Reinforcement</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Reinforcing 300 community shelters ahead of monsoon season.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="relief">
+      <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?q=80&w=800&auto=format&fit=crop" alt="Emergency Relief Kits field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Gaziantep, Türkiye</span>
+        <h3 class="font-bold text-lg mt-3">Emergency Relief Kits</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Rapid-deployment kits with shelter, food and hygiene supplies for displaced families.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="sustainability">
+      <img src="https://images.unsplash.com/photo-1541302177659-b8bef6c9bc63?q=80&w=800&auto=format&fit=crop" alt="Clean Water Boreholes field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Nsanje, Malawi</span>
+        <h3 class="font-bold text-lg mt-3">Clean Water Boreholes</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Ten new boreholes bringing safe water within a 15-minute walk for 6,000 residents.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+    
+    <div class="card overflow-hidden" data-category="sustainability">
+      <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=800&auto=format&fit=crop" alt="Solar Micro-Grids field photo" class="w-full h-48 object-cover">
+      <div class="p-6">
+        <span class="coord-tag">Mzuzu, Malawi</span>
+        <h3 class="font-bold text-lg mt-3">Solar Micro-Grids</h3>
+        <p class="text-sm text-ink-soft mt-2 leading-relaxed">Community-owned solar grids powering clinics and schools off the national grid.</p>
+        <a href="programs.html" class="text-terracotta text-sm font-semibold mt-4 inline-block hover:underline">Read the case study →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy text-slate-300 mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2 text-white font-extrabold text-lg mb-3">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </div>
+      <p class="text-sm text-slate-400 leading-relaxed">An international NGO delivering health, education and emergency relief programs across 15 countries, audited and reported in the open.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-white">About &amp; Leadership</a></li>
+        <li><a href="programs.html" class="hover:text-white">Programs &amp; Field Impact</a></li>
+        <li><a href="transparency.html" class="hover:text-white">Financial Transparency</a></li>
+        <li><a href="blog.html" class="hover:text-white">News &amp; Field Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Involved</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="donate.html" class="hover:text-white">Donate</a></li>
+        <li><a href="contact.html" class="hover:text-white">Volunteer</a></li>
+        <li><a href="contact.html" class="hover:text-white">Institutional Partnerships</a></li>
+        <li><a href="contact.html" class="hover:text-white">Press Inquiries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+        <li><a href="refund-policy.html" class="hover:text-white">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+      <p>© <span data-year></span> Bridgepoint Relief International. Registered 501(c)(3) nonprofit.</p>
+      <p class="mono">EIN 00-0000000 · Audited annually by an independent firm</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

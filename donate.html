@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate · Bridgepoint Relief</title>
+<meta name="description" content="Give a one-time or monthly gift to Bridgepoint Relief in your currency, with full fee transparency.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            'navy-2': '#16213A',
+            off: '#F8FAFC',
+            terracotta: { DEFAULT:'#EA580C', dark:'#C2410C' },
+            emerald: '#059669'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            mono: ['IBM Plex Mono','ui-monospace','monospace']
+          }
+        }
+      }
+    }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-off text-navy antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="bg-navy sticky top-0 z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-lg tracking-tight">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a href="index.html" class="nav-link active">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="programs.html" class="nav-link">Programs</a>
+<a href="transparency.html" class="nav-link">Transparency</a>
+<a href="blog.html" class="nav-link">Field Blog</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="text-slate-200 text-sm font-medium hover:text-white">Volunteer</a>
+        <a href="donate.html" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Donate Now</a>
+      </div>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+      <nav class="pb-4 space-y-1" aria-label="Mobile">
+        <a href="index.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Home</a>
+<a href="about.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">About</a>
+<a href="programs.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Programs</a>
+<a href="transparency.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Transparency</a>
+<a href="blog.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Field Blog</a>
+<a href="contact.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Contact</a>
+
+        <a href="donate.html" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg text-sm">Donate Now</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="dispatch" role="region" aria-label="Live field dispatch feed">
+  <div class="dispatch-track" id="dispatch-track" role="list"></div>
+</div>
+
+<main id="main">
+
+<section class="bg-navy">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 text-center">
+    <p class="eyebrow mb-3">Donation Portal</p>
+    <h1 class="text-4xl font-extrabold text-white">Give directly to the field.</h1>
+    <p class="text-slate-300 mt-3">Every gift posts to the public ledger within 48 hours.</p>
+  </div>
+</section>
+
+<section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <form id="donate-form" class="grid lg:grid-cols-3 gap-8" novalidate>
+    <div class="lg:col-span-2 space-y-8">
+
+      <div class="card p-7">
+        <h2 class="font-bold text-lg mb-4">Giving frequency</h2>
+        <div class="grid grid-cols-2 gap-3" role="group" aria-label="Choose giving frequency">
+          <button type="button" data-freq="one-time" aria-pressed="true" class="amount-btn py-3 rounded-lg">One-Time Gift</button>
+          <button type="button" data-freq="monthly" aria-pressed="false" class="amount-btn py-3 rounded-lg">Monthly Supporter</button>
+        </div>
+      </div>
+
+      <div class="card p-7">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-bold text-lg">Amount</h2>
+          <label class="text-sm font-medium flex items-center gap-2">
+            Currency
+            <select id="currency-select" class="border border-slate-300 rounded-lg px-3 py-1.5 text-sm">
+              <option value="USD">USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="KES">KES (KSh)</option>
+              <option value="UGX">UGX (USh)</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" role="group" aria-label="Choose an amount">
+          <button type="button" class="amount-btn py-4 rounded-lg" data-amount="25" aria-pressed="false">25</button>
+          <button type="button" class="amount-btn py-4 rounded-lg" data-amount="50" aria-pressed="true">50</button>
+          <button type="button" class="amount-btn py-4 rounded-lg" data-amount="100" aria-pressed="false">100</button>
+          <div class="col-span-2 sm:col-span-1">
+            <label for="custom-amount" class="sr-only">Custom amount</label>
+            <input type="number" min="1" id="custom-amount" placeholder="Custom" class="amount-btn w-full py-4 rounded-lg px-3 text-center">
+          </div>
+        </div>
+        <p id="amount-error" class="hidden text-sm text-red-600 mt-3" role="alert">Enter an amount greater than zero to continue.</p>
+        <label class="flex items-center gap-2 mt-5 text-sm text-ink-soft">
+          <input type="checkbox" id="cover-fee" class="w-4 h-4 rounded border-slate-300">
+          Add 3.8% to cover processing costs so 100% of my gift reaches programs
+        </label>
+      </div>
+
+      <div class="card p-7">
+        <h2 class="font-bold text-lg mb-4">Your details</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="don-first" class="block text-sm font-medium mb-1.5">First name</label>
+            <input id="don-first" required type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+          </div>
+          <div>
+            <label for="don-last" class="block text-sm font-medium mb-1.5">Last name</label>
+            <input id="don-last" required type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+          </div>
+          <div class="sm:col-span-2">
+            <label for="don-email" class="block text-sm font-medium mb-1.5">Email address</label>
+            <input id="don-email" required type="email" class="w-full border border-slate-300 rounded-lg px-3 py-2.5 focus:ring-2 focus:ring-orange-500 focus:border-terracotta">
+          </div>
+        </div>
+      </div>
+
+      <div class="card p-7">
+        <h2 class="font-bold text-lg mb-4">Payment</h2>
+        <div class="border border-dashed border-slate-300 rounded-lg p-6 bg-slate-50">
+          <p class="text-sm text-ink-soft mb-3">Secure card entry (Stripe Elements)</p>
+          <div class="space-y-3">
+            <div class="bg-white border border-slate-300 rounded-lg px-3 py-3 text-sm text-slate-400">Card number</div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="bg-white border border-slate-300 rounded-lg px-3 py-3 text-sm text-slate-400">MM / YY</div>
+              <div class="bg-white border border-slate-300 rounded-lg px-3 py-3 text-sm text-slate-400">CVC</div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 mt-3">Payments are processed by Stripe. Bridgepoint never stores card details.</p>
+        </div>
+      </div>
+    </div>
+
+    <aside class="lg:col-span-1">
+      <div class="card p-7 sticky top-24">
+        <h2 class="font-bold text-lg mb-5">Summary</h2>
+        <dl class="space-y-3 text-sm">
+          <div class="flex justify-between"><dt class="text-ink-soft">Gift amount</dt><dd id="summary-amount" class="font-semibold mono">$50</dd></div>
+          <div class="flex justify-between"><dt class="text-ink-soft">Processing fee</dt><dd id="summary-fee" class="font-semibold mono">$0.00</dd></div>
+          <div class="flex justify-between pt-3 border-t border-slate-200"><dt class="font-bold">Total</dt><dd id="summary-total" class="font-extrabold text-lg mono">$50</dd></div>
+          <p class="text-xs text-ink-soft mono">Billed <span id="summary-freq">one-time</span></p>
+        </dl>
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-lg mt-6">Complete Donation</button>
+        <p class="text-xs text-ink-soft mt-4 text-center">By donating you agree to our <a href="terms.html" class="underline">Terms</a> and <a href="privacy.html" class="underline">Privacy Policy</a>.</p>
+      </div>
+    </aside>
+  </form>
+</section>
+
+</main>
+
+<footer class="bg-navy text-slate-300 mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2 text-white font-extrabold text-lg mb-3">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </div>
+      <p class="text-sm text-slate-400 leading-relaxed">An international NGO delivering health, education and emergency relief programs across 15 countries, audited and reported in the open.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-white">About &amp; Leadership</a></li>
+        <li><a href="programs.html" class="hover:text-white">Programs &amp; Field Impact</a></li>
+        <li><a href="transparency.html" class="hover:text-white">Financial Transparency</a></li>
+        <li><a href="blog.html" class="hover:text-white">News &amp; Field Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Involved</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="donate.html" class="hover:text-white">Donate</a></li>
+        <li><a href="contact.html" class="hover:text-white">Volunteer</a></li>
+        <li><a href="contact.html" class="hover:text-white">Institutional Partnerships</a></li>
+        <li><a href="contact.html" class="hover:text-white">Press Inquiries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+        <li><a href="refund-policy.html" class="hover:text-white">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+      <p>© <span data-year></span> Bridgepoint Relief International. Registered 501(c)(3) nonprofit.</p>
+      <p class="mono">EIN 00-0000000 · Audited annually by an independent firm</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

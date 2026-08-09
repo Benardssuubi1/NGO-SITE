@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home · Bridgepoint Relief</title>
+<meta name="description" content="Bridgepoint Relief delivers health, education and emergency relief across 15 countries, with every gift tracked on the public ledger.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0F172A',
+            'navy-2': '#16213A',
+            off: '#F8FAFC',
+            terracotta: { DEFAULT:'#EA580C', dark:'#C2410C' },
+            emerald: '#059669'
+          },
+          fontFamily: {
+            sans: ['Inter','system-ui','sans-serif'],
+            mono: ['IBM Plex Mono','ui-monospace','monospace']
+          }
+        }
+      }
+    }
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-off text-navy antialiased">
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="bg-navy sticky top-0 z-50 border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-2 text-white font-extrabold text-lg tracking-tight">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </a>
+      <nav class="hidden md:flex items-center gap-8" aria-label="Primary">
+        <a href="index.html" class="nav-link active">Home</a>
+<a href="about.html" class="nav-link">About</a>
+<a href="programs.html" class="nav-link">Programs</a>
+<a href="transparency.html" class="nav-link">Transparency</a>
+<a href="blog.html" class="nav-link">Field Blog</a>
+<a href="contact.html" class="nav-link">Contact</a>
+
+      </nav>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="contact.html" class="text-slate-200 text-sm font-medium hover:text-white">Volunteer</a>
+        <a href="donate.html" class="btn-primary px-5 py-2.5 rounded-lg text-sm">Donate Now</a>
+      </div>
+      <button id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+      <nav class="pb-4 space-y-1" aria-label="Mobile">
+        <a href="index.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Home</a>
+<a href="about.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">About</a>
+<a href="programs.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Programs</a>
+<a href="transparency.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Transparency</a>
+<a href="blog.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Field Blog</a>
+<a href="contact.html" class="block px-4 py-3 text-slate-200 hover:bg-white/5 rounded-lg">Contact</a>
+
+        <a href="donate.html" class="btn-primary block text-center mt-3 px-5 py-3 rounded-lg text-sm">Donate Now</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="dispatch" role="region" aria-label="Live field dispatch feed">
+  <div class="dispatch-track" id="dispatch-track" role="list"></div>
+</div>
+
+<main id="main">
+
+<section class="relative bg-navy overflow-hidden">
+  <div class="absolute inset-0 opacity-25" style="background-image:radial-gradient(circle at 20% 20%, #EA580C 0, transparent 45%),radial-gradient(circle at 80% 60%, #059669 0, transparent 40%);"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 relative grid lg:grid-cols-2 gap-14 items-center">
+    <div>
+      <p class="eyebrow mb-5">Field-verified relief since 2003</p>
+      <h1 class="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-white leading-[1.08] tracking-tight">
+        We put the next delivery ahead of the next press release.
+      </h1>
+      <p class="mt-6 text-lg text-slate-300 max-w-xl leading-relaxed">
+        Bridgepoint Relief runs health, education and emergency-response programs in 15 countries. Every gift is logged the day it's spent — you can watch the ledger below, right now.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="donate.html" class="btn-primary px-7 py-3.5 rounded-lg text-base">Donate Now</a>
+        <a href="programs.html" class="btn-secondary px-7 py-3.5 rounded-lg text-base">Explore Programs</a>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1200&auto=format&fit=crop" alt="Field team distributing clean-water supplies to a rural community" class="w-full h-[420px] object-cover">
+      </div>
+      <div class="absolute -bottom-6 -left-6 card px-5 py-4 shadow-xl hidden sm:block">
+        <p class="text-xs text-slate-500 mono uppercase tracking-wide">Latest audit</p>
+        <p class="font-bold text-navy">88% direct to programs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="card p-7">
+      <p class="text-4xl font-extrabold text-navy mono" data-counter="128400" data-suffix="+">0</p>
+      <p class="mt-2 text-sm text-ink-soft">Lives directly impacted this year</p>
+    </div>
+    <div class="card p-7">
+      <p class="text-4xl font-extrabold text-navy mono" data-counter="15">0</p>
+      <p class="mt-2 text-sm text-ink-soft">Countries with active programs</p>
+    </div>
+    <div class="card p-7">
+      <p class="text-4xl font-extrabold text-emerald mono" data-counter="88" data-suffix="%">0</p>
+      <p class="mt-2 text-sm text-ink-soft">Of every dollar reaches the field</p>
+    </div>
+    <div class="card p-7">
+      <p class="text-4xl font-extrabold text-navy mono" data-counter="342">0</p>
+      <p class="mt-2 text-sm text-ink-soft">Field staff and local partners</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-10">
+      <div>
+        <p class="eyebrow mb-2">Active now</p>
+        <h2 class="text-3xl font-extrabold text-navy">Campaigns in progress</h2>
+      </div>
+      <a href="programs.html" class="text-terracotta font-semibold hover:underline">View all programs →</a>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?q=80&w=800&auto=format&fit=crop" alt="Children in a classroom in Cox's Bazar" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <span class="coord-tag mb-3">COX'S BAZAR, BD</span>
+          <h3 class="font-bold text-lg mt-2">Emergency School Kits</h3>
+          <p class="text-sm text-ink-soft mt-2">Supplies and temporary classrooms for displaced children.</p>
+          <div class="mt-4">
+            <div class="flex justify-between text-xs mono text-ink-soft mb-1"><span>$68,400 raised</span><span>Goal $90,000</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:76%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1541302177659-b8bef6c9bc63?q=80&w=800&auto=format&fit=crop" alt="A newly drilled well in Malawi" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <span class="coord-tag mb-3">NSANJE, MALAWI</span>
+          <h3 class="font-bold text-lg mt-2">Clean Water Boreholes</h3>
+          <p class="text-sm text-ink-soft mt-2">Ten new boreholes serving 6,000 residents by year end.</p>
+          <div class="mt-4">
+            <div class="flex justify-between text-xs mono text-ink-soft mb-1"><span>$41,200 raised</span><span>Goal $60,000</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:68%"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="card overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=800&auto=format&fit=crop" alt="A mobile health clinic in Uganda" class="w-full h-44 object-cover">
+        <div class="p-6">
+          <span class="coord-tag mb-3">BIDIBIDI, UGANDA</span>
+          <h3 class="font-bold text-lg mt-2">Mobile Health Clinics</h3>
+          <p class="text-sm text-ink-soft mt-2">Rotating clinics bringing checkups to remote settlements.</p>
+          <div class="mt-4">
+            <div class="flex justify-between text-xs mono text-ink-soft mb-1"><span>$29,800 raised</span><span>Goal $45,000</span></div>
+            <div class="progress-track"><div class="progress-fill" style="width:66%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+  <p class="eyebrow text-center mb-2">Held to account</p>
+  <h2 class="text-2xl font-extrabold text-navy text-center mb-10">Audited, registered and reviewed by</h2>
+  <div class="badge-grid grid grid-cols-2 sm:grid-cols-4 gap-8 items-center justify-items-center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_the_United_Nations.svg/240px-Flag_of_the_United_Nations.svg.png" alt="United Nations partner" class="h-12 object-contain">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/240px-Flag_of_Europe.svg.png" alt="European Union grant recipient" class="h-12 object-contain">
+    <div class="text-navy font-bold text-lg mono border-2 border-navy/20 rounded-lg px-4 py-2">GuideStar<br><span class="text-xs font-normal">Platinum</span></div>
+    <div class="text-navy font-bold text-lg mono border-2 border-navy/20 rounded-lg px-4 py-2">ECFA<br><span class="text-xs font-normal">Accredited</span></div>
+  </div>
+</section>
+
+<section class="bg-navy">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+    <h2 class="text-3xl font-extrabold text-white">Your gift is on the ledger the day it lands.</h2>
+    <p class="mt-4 text-slate-300">No black boxes. No year-end surprises. Just a running record of where the money went.</p>
+    <a href="donate.html" class="btn-primary inline-block mt-8 px-8 py-3.5 rounded-lg">Make a gift</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy text-slate-300 mt-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-2 text-white font-extrabold text-lg mb-3">
+        <span class="w-8 h-8 rounded-md bg-terracotta flex items-center justify-center text-sm">BR</span>
+        Bridgepoint Relief
+      </div>
+      <p class="text-sm text-slate-400 leading-relaxed">An international NGO delivering health, education and emergency relief programs across 15 countries, audited and reported in the open.</p>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Explore</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="about.html" class="hover:text-white">About &amp; Leadership</a></li>
+        <li><a href="programs.html" class="hover:text-white">Programs &amp; Field Impact</a></li>
+        <li><a href="transparency.html" class="hover:text-white">Financial Transparency</a></li>
+        <li><a href="blog.html" class="hover:text-white">News &amp; Field Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Involved</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="donate.html" class="hover:text-white">Donate</a></li>
+        <li><a href="contact.html" class="hover:text-white">Volunteer</a></li>
+        <li><a href="contact.html" class="hover:text-white">Institutional Partnerships</a></li>
+        <li><a href="contact.html" class="hover:text-white">Press Inquiries</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="text-white font-semibold text-sm mb-4 eyebrow" style="color:#fff;">Legal</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+        <li><a href="refund-policy.html" class="hover:text-white">Refund Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
+      <p>© <span data-year></span> Bridgepoint Relief International. Registered 501(c)(3) nonprofit.</p>
+      <p class="mono">EIN 00-0000000 · Audited annually by an independent firm</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

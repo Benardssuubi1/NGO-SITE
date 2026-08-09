@@ -1,0 +1,179 @@
+:root{
+  --navy:#0F172A;
+  --navy-2:#16213A;
+  --off:#F8FAFC;
+  --white:#FFFFFF;
+  --terracotta:#EA580C;
+  --terracotta-dark:#C2410C;
+  --emerald:#059669;
+  --line:#E2E8F0;
+  --ink:#0F172A;
+  --ink-soft:#475569;
+  --font-display:'Inter',system-ui,-apple-system,sans-serif;
+  --font-body:'Inter',system-ui,-apple-system,sans-serif;
+  --font-mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--off);
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Visible, high-contrast keyboard focus everywhere */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,
+textarea:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--terracotta);
+  outline-offset:2px;
+  border-radius:2px;
+}
+
+.skip-link{
+  position:absolute;left:-9999px;top:0;background:var(--terracotta);color:#fff;
+  padding:.75rem 1.25rem;z-index:100;font-weight:600;border-radius:0 0 6px 0;
+}
+.skip-link:focus{left:0;}
+
+/* ---------- Signature element: the Dispatch Ledger ---------- */
+/* A telex/manifest-style ticker: monospace, uppercase tracking, scrolling
+   record of field actions. Grounds the transparency/audit theme that
+   recurs through the whole brief (ledger tables, audit logs, allocation
+   reporting) into one recognizable structural device used across pages. */
+.dispatch{
+  background:var(--navy-2);
+  border-top:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  position:relative;
+}
+.dispatch::before,.dispatch::after{
+  content:"";position:absolute;top:0;bottom:0;width:48px;z-index:2;pointer-events:none;
+}
+.dispatch::before{left:0;background:linear-gradient(90deg,var(--navy-2),transparent);}
+.dispatch::after{right:0;background:linear-gradient(-90deg,var(--navy-2),transparent);}
+.dispatch-track{
+  display:flex;width:max-content;
+  animation:dispatch-scroll 42s linear infinite;
+}
+.dispatch-track:hover{animation-play-state:paused;}
+@keyframes dispatch-scroll{
+  from{transform:translateX(0);}
+  to{transform:translateX(-50%);}
+}
+.dispatch-item{
+  font-family:var(--font-mono);
+  font-size:.75rem;
+  letter-spacing:.06em;
+  color:#CBD5E1;
+  white-space:nowrap;
+  padding:.65rem 2rem;
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  border-right:1px solid rgba(255,255,255,.08);
+}
+.dispatch-item .dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);flex:none;}
+.dispatch-item .loc{color:#FDBA74;}
+.dispatch-item .time{color:#64748B;}
+
+@media (prefers-reduced-motion: reduce){
+  .dispatch-track{animation:none;}
+  .dispatch{overflow-x:auto;}
+}
+
+/* Mono utility styling for data: stats, coordinates, table figures */
+.mono{font-family:var(--font-mono);letter-spacing:.02em;}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:.7rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--terracotta);
+  font-weight:600;
+}
+
+/* Coordinate / location tag used on case studies + dispatch items */
+.coord-tag{
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-family:var(--font-mono);font-size:.7rem;letter-spacing:.05em;
+  color:var(--navy);background:#EEF2F7;border:1px solid var(--line);
+  padding:.15rem .55rem;border-radius:999px;
+}
+
+/* Progress bars for campaigns */
+.progress-track{background:#E2E8F0;border-radius:999px;height:8px;overflow:hidden;}
+.progress-fill{background:var(--terracotta);height:100%;border-radius:999px;}
+
+.btn-primary{
+  background:var(--terracotta);color:#fff;font-weight:600;
+  transition:background-color .15s ease, transform .1s ease;
+}
+.btn-primary:hover{background:var(--terracotta-dark);}
+.btn-primary:active{transform:translateY(1px);}
+
+.btn-secondary{
+  background:transparent;color:var(--white);font-weight:600;
+  border:1.5px solid rgba(255,255,255,.55);
+  transition:background-color .15s ease,border-color .15s ease;
+}
+.btn-secondary:hover{background:rgba(255,255,255,.08);border-color:#fff;}
+
+.btn-outline-navy{
+  background:transparent;color:var(--navy);font-weight:600;
+  border:1.5px solid var(--navy);
+}
+.btn-outline-navy:hover{background:var(--navy);color:#fff;}
+
+.card{
+  background:var(--white);border:1px solid var(--line);border-radius:14px;
+}
+
+.nav-link{
+  position:relative;color:#CBD5E1;font-weight:500;font-size:.925rem;
+}
+.nav-link:hover{color:#fff;}
+.nav-link.active{color:#fff;}
+.nav-link.active::after{
+  content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--terracotta);
+}
+
+#mobile-menu{transition:max-height .25s ease;}
+
+/* Amount grid buttons on donate page */
+.amount-btn{
+  border:1.5px solid var(--line);border-radius:10px;font-weight:600;color:var(--navy);
+  transition:all .12s ease;background:#fff;
+}
+.amount-btn[aria-pressed="true"]{
+  border-color:var(--terracotta);background:#FFF4ED;color:var(--terracotta-dark);
+}
+
+.tab-btn{color:var(--ink-soft);font-weight:600;border-bottom:2px solid transparent;}
+.tab-btn[aria-selected="true"]{color:var(--navy);border-bottom-color:var(--terracotta);}
+
+.status-pill{font-family:var(--font-mono);font-size:.7rem;padding:.15rem .55rem;border-radius:999px;font-weight:600;letter-spacing:.03em;}
+.status-success{background:#ECFDF5;color:var(--emerald);}
+.status-pending{background:#FFF7ED;color:var(--terracotta-dark);}
+.status-failed{background:#FEF2F2;color:#B91C1C;}
+
+.badge-grid img{filter:grayscale(1);opacity:.6;transition:all .2s ease;}
+.badge-grid img:hover{filter:grayscale(0);opacity:1;}
+
+table.ledger{border-collapse:collapse;width:100%;}
+table.ledger th{
+  font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;
+  color:#94A3B8;text-align:left;padding:.75rem 1rem;border-bottom:1px solid var(--line);
+}
+table.ledger td{padding:.85rem 1rem;border-bottom:1px solid var(--line);font-size:.875rem;}
+table.ledger tr:hover td{background:#F8FAFC;}
+
+.sidebar-link{
+  color:#CBD5E1;border-radius:8px;font-weight:500;font-size:.9rem;
+}
+.sidebar-link:hover{background:rgba(255,255,255,.06);color:#fff;}
+.sidebar-link.active{background:var(--terracotta);color:#fff;}
+
+::selection{background:var(--terracotta);color:#fff;}
